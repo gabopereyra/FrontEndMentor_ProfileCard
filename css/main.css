@@ -27,7 +27,6 @@ html {
 .container_dos {
   max-width: calc(100vw / 2);
   height: 100vh;
-  box-sizing: border-box;
   background-repeat: no-repeat;
 }
 
