@@ -1,34 +1,58 @@
-:root{
-    --colorPrincipal: hsl(185, 75%, 39%); 
-    --colorSecundario: hsl(229, 23%, 23%);
-    --colorTerciario: hsl(227, 10%, 46%);
-    --neutral: hsl(0, 0%, 59%);
-    --size: 18px;
-    --regular: 400;
-    --bold: 700;
-    --fuente: 'Kumbh Sans', sans-serif;
-
+:root {
+  --colorPrincipal: hsl(185, 75%, 39%);
+  --colorSecundario: hsl(229, 23%, 23%);
+  --colorTerciario: hsl(227, 10%, 46%);
+  --neutral: hsl(0, 0%, 59%);
+  --size: 18px;
+  --regular: 400;
+  --bold: 700;
+  --fuente: "Kumbh Sans", sans-serif;
 }
 
 /* Added by FrontEndMentor */
 
-.attribution { font-size: 14px; text-align: center; } 
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution {
+  font-size: 14px;
+  text-align: center;
+  background-color: var(--colorPrincipal);
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
 
 /* Added by me */
-html{
-    font-size: var(--size);
-    font-family: var(--fuente);
+html {
+  font-size: var(--size);
+  font-family: var(--fuente);
+  background-color: var(--colorPrincipal);
 }
 
-.container{
-    background-color: var(--colorPrincipal);
-    height: 100vh;
+.container {
+    height: 97vh;
+    width: 99.8vw;
+    position: relative;
 }
 
-.container::after{
-    content: '';
-    width: 50%;
-    height: 50%;
-    background-image: url(../images/bg-pattern-top.svg);
+.container::before,
+::after {
+  content: "";
+  position: absolute;
+  display: block;
+  background-repeat: no-repeat;
+}
+
+.container::before {
+box-sizing: content-box;
+height: 100%;
+width: 100%;
+  background-image: url(../images/bg-pattern-top.svg);
+  background-position: -12rem -25rem;
+}
+
+.container::after {
+    box-sizing: content-box;
+    height: 100%;
+    width: 100%;
+  background-image: url(../images/bg-pattern-bottom.svg);
+  background-position: 43rem 21rem;
 }
