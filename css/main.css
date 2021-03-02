@@ -9,50 +9,111 @@
   --fuente: "Kumbh Sans", sans-serif;
 }
 
-/* Added by FrontEndMentor */
+html {
+  font-size: var(--size);
+  font-family: var(--fuente);
+}
 
+.container {
+  height: 100vh;
+  background-color: var(--colorPrincipal);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  position: relative;
+}
+
+.container_uno,
+.container_dos {
+  max-width: calc(100vw / 2);
+  height: 100vh;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+
+.container_uno,
+.container_dos {
+  background-image: url(../images/bg-pattern-top.svg);
+  background-repeat: no-repeat;
+  background-position: 100% 200%;
+}
+
+.container_dos {
+  background-image: url(../images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat;
+  background-position: 0% -100%;
+}
+
+.card {
+  background-color: white;
+  width: 20rem;
+  height: 20rem;
+  z-index: 1;
+  border-radius: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  display: grid;
+}
+
+.card__title {
+  background-image: url(../images/bg-pattern-card.svg);
+  width: 100%;
+  height: 7rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.card__img {
+  position: absolute;
+  top: 70px;
+  width: 100%;
+}
+
+.card__img img {
+  border-radius: 50%;
+  border: 4px solid white;
+}
+
+.card__name {
+  margin: 4rem 0 1rem 0;
+  font-weight: var(--bold);
+}
+.card__name span,
+.card__name--light {
+  font-weight: var(--regular);
+  color: var(--neutral);
+}
+.card__name--light {
+  margin-top: 1rem;
+  font-size: 14px;
+}
+.card__footer {
+  border-top: 1px solid var(--neutral);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.2rem;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+/* Indicados por la página */
 .attribution {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  grid-column: 1 / 3;
   font-size: 14px;
   text-align: center;
   background-color: var(--colorPrincipal);
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
-}
-
-/* Added by me */
-html {
-  font-size: var(--size);
-  font-family: var(--fuente);
-  background-color: var(--colorPrincipal);
-}
-
-.container {
-    height: 97vh;
-    width: 99.8vw;
-    position: relative;
-}
-
-.container::before,
-::after {
-  content: "";
-  position: absolute;
-  display: block;
-  background-repeat: no-repeat;
-}
-
-.container::before {
-box-sizing: content-box;
-height: 100%;
-width: 100%;
-  background-image: url(../images/bg-pattern-top.svg);
-  background-position: -12rem -25rem;
-}
-
-.container::after {
-    box-sizing: content-box;
-    height: 100%;
-    width: 100%;
-  background-image: url(../images/bg-pattern-bottom.svg);
-  background-position: 43rem 21rem;
 }
